@@ -3,11 +3,12 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { BsArrowDownRight } from "react-icons/bs";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 function ServicesSection() {
     const [showFAQ, setShowFAQ] = useState(false);
     const [responsiveColor, setResponsiveColor] = useState(true);
+    const [hoveredItem, setHoveredItem] = useState(null);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(min-width: 1280px)");
@@ -48,15 +49,15 @@ function ServicesSection() {
             color: "inherit",
             transition: {
                 duration: 0.8,
-                ease: [0.4, 0, 0.2, 1] // Custom easing for smooth return
+                ease: [0.4, 0, 0.2, 1]
             }
         },
         hover: {
             background: "linear-gradient(to right, #8750f7, #2a1454)",
             color: "#ffffff",
             transition: {
-                duration: 0.8, // Smooth transition duration
-                ease: [0.4, 0, 0.2, 1] // Custom easing curve
+                duration: 0.8,
+                ease: [0.4, 0, 0.2, 1]
             }
         }
     };
@@ -100,7 +101,7 @@ function ServicesSection() {
                                     variants={rowVariants}
                                     initial="initial"
                                     whileHover="hover"
-                                    animate="initial" // Ensures it returns to initial state
+                                    animate="initial"
                                 >
                                     <th className="px-6 py-4 font-bold whitespace-nowrap">
                                         <Link href="#" className="flex items-center text-xl sm:text-2xl">
@@ -138,7 +139,15 @@ function ServicesSection() {
                                     variants={rowVariants}
                                     initial="initial"
                                     whileHover="hover"
-                                    animate="initial" // Ensures it returns to initial state
+                                    whileFocus="hover"
+                                    whileTap="hover"
+                                    animate="initial"
+                                    tabIndex={0}
+                                    onHoverStart={() => setHoveredItem(item.id)}
+                                    onHoverEnd={() => setHoveredItem(null)}
+                                    onTap={() => setHoveredItem(item.id)}
+                                    onFocus={() => setHoveredItem(item.id)}
+                                    onBlur={() => setHoveredItem(null)}
                                 >
                                     <div className="px-6 space-y-2">
                                         <div className="flex justify-between items-center">
@@ -146,7 +155,12 @@ function ServicesSection() {
                                                 <span className="mr-4 text-lg font-bold">{item.id}</span>
                                                 <span className="text-xl sm:text-2xl font-bold">{item.title}</span>
                                             </div>
-                                            <motion.div variants={arrowVariants}>
+                                            <motion.div
+                                                variants={arrowVariants}
+                                                // animate="hover"
+                                                animate={hoveredItem === item.id ? "hover" : "initial"}
+                                                // initial="initial"
+                                            >
                                                 <BsArrowDownRight className="text-2xl" />
                                             </motion.div>
                                         </div>

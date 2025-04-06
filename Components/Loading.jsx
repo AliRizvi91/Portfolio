@@ -7,7 +7,7 @@ function Loading({ setIsLoading , Position }) {
   
   return (
     <motion.div
-      className={`${Position} w-full  top-0 left-0 z-2000 bg-white h-screen `}
+      className={`${Position} w-full top-0 left-0 z-2000 bg-white h-screen `}
       initial={{ y: 0 }}
       animate={{ 
         y: "-170vh",
@@ -19,7 +19,7 @@ function Loading({ setIsLoading , Position }) {
       }}
     >
       <div className="w-full relative top-10 h-full flex flex-col justify-center items-center">
-        <div className="overflow-hidden relative h-full flex justify-center items-center flex-col">
+        <div className="overflow-hidden relative sm:top-0 -top-20 h-full flex justify-center items-center flex-col">
           {/* "Loading" text */}
           <motion.div
             initial={{ y: 0, opacity: 1 }}
@@ -34,7 +34,7 @@ function Loading({ setIsLoading , Position }) {
             }}
             onAnimationComplete={() => setIsLoading(false)}
           >
-            <h1 className='uppercase text-2xl tracking-[1.1em] mb-4'>Loading</h1>
+            <h1 className='uppercase text-center sm:font-normal font-bold sm:text-2xl text-[1rem] sm:tracking-[1.1em] tracking-[0.8em] mb-4'>Loading</h1>
           </motion.div>
 
           {/* Shimmer bar */}

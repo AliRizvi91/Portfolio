@@ -52,18 +52,10 @@ function RecentWorks() {
         hidden: {
             y: 15,
             opacity: 0,
-            transition: {
-                duration: 0.8,
-                ease: [0.4, 0, 0.2, 1],
-            },
         },
         visible: {
             y: 0,
             opacity: 1,
-            transition: {
-                duration: 0.8,
-                ease: [0.4, 0, 0.2, 1],
-            },
         },
     };
 
@@ -72,20 +64,18 @@ function RecentWorks() {
         hidden: {
             rotate: 0,
             color: "#8750f7",
-            transition: {
-                duration: 0.8,
-                ease: [0.4, 0, 0.2, 1],
-            },
         },
         visible: {
             rotate: -45,
             color: "#ffffff",
             scale: 1.2,
-            transition: {
-                duration: 0.8,
-                ease: [0.4, 0, 0.2, 1],
-            },
         },
+    };
+
+    // Transition settings
+    const transition = {
+        duration: 0.8,
+        ease: [0.4, 0, 0.2, 1]
     };
 
     // Data arrays
@@ -145,48 +135,54 @@ function RecentWorks() {
 
     // WorkCard component
     function WorkCard({ Data }) {
-        return Data.map((data, index) => (
-            <motion.div
-                key={index}
-                className="sm:w-[35rem] sm:h-[35rem] w-[30rem] h-[30rem] rounded-2xl relative m-2 sm:m-7 focus:outline-none"
-                style={{
-                    backgroundImage: `url(${data.Image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-                variants={cardVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover="hover"
-                whileFocus="focus" // Trigger focus state
-                tabIndex={0} // Make the card focusable
-                transition={{ type: "spring", stiffness: 100, damping: 20 }}
-            >
-                {/* Small card - Controlled by parent hover or focus state */}
+        return Data.map((data, index) => {
+            const [isActive, setIsActive] = useState(false);
+
+            return (
                 <motion.div
-                    variants={descriptionVariants}
+                    key={index}
+                    className="sm:w-[35rem] sm:h-[35rem] w-[30rem] h-[30rem] rounded-2xl relative m-2 sm:m-7 focus:outline-none"
+                    style={{
+                        backgroundImage: `url(${data.Image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                    variants={cardVariants}
                     initial="hidden"
-                    animate="hidden" // Ensure it starts hidden
-                    whileHover="visible" // Show on hover
-                    whileFocus="visible" // Show on focus
-                    className="flex flex-row w-[95%] items-center p-5 rounded-2xl bg-gradient-to-r from-[#8750f7] to-[#2a1454] absolute bottom-4 left-4"
+                    animate="visible"
+                    whileHover="hover"
+                    whileFocus="focus"
+                    tabIndex={0}
+                    onMouseEnter={() => setIsActive(true)}
+                    onMouseLeave={() => setIsActive(false)}
+                    onFocus={() => setIsActive(true)}
+                    onBlur={() => setIsActive(false)}
+                    transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 >
-                    <div>
-                        <h1 className="text-2xl font-bold text-white">{data.Title}</h1>
-                        <p className="text-white">{data.Description}</p>
-                    </div>
+                    {/* Small card - Controlled by hover or focus state */}
                     <motion.div
-                        variants={arrowVariants}
+                        className="flex flex-row w-[95%] items-center p-5 rounded-2xl bg-gradient-to-r from-[#8750f7] to-[#2a1454] absolute bottom-4 left-4"
                         initial="hidden"
-                        animate="hidden" // Ensure it starts hidden
-                        whileHover="visible" // Show on hover
-                        whileFocus="visible" // Show on focus
+                        animate={isActive ? "visible" : "hidden"}
+                        variants={descriptionVariants}
+                        transition={transition}
                     >
-                        <BsArrowDownRight className="text-2xl" />
+                        <div>
+                            <h1 className="text-2xl font-bold text-white">{data.Title}</h1>
+                            <p className="text-white">{data.Description}</p>
+                        </div>
+                        <motion.div
+                            initial="hidden"
+                            animate={isActive ? "visible" : "hidden"}
+                            variants={arrowVariants}
+                            transition={transition}
+                        >
+                            <BsArrowDownRight className="text-2xl" />
+                        </motion.div>
                     </motion.div>
                 </motion.div>
-            </motion.div>
-        ));
+            );
+        });
     }
 
     const getCurrentTabData = () => {
