@@ -19,7 +19,7 @@ function Loading({ setIsLoading , Position }) {
       }}
     >
       <div className="w-full relative top-10 h-full flex flex-col justify-center items-center">
-        <div className="overflow-hidden relative sm:top-0 -top-20 h-full flex justify-center items-center flex-col">
+        <div className="overflow-hidden relative top-0  h-full flex justify-center items-center flex-col">
           {/* "Loading" text */}
           <motion.div
             initial={{ y: 0, opacity: 1 }}
