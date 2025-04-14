@@ -2,14 +2,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Loading from '@/Components/Loading';
 
 export default function LoadingWrapper({ children }) {
   const [isLoading, setIsLoading] = useState(true);
   const [contentLoaded, setContentLoaded] = useState(false);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     // Check if page content is loaded
@@ -42,7 +41,7 @@ export default function LoadingWrapper({ children }) {
       clearTimeout(timer);
       window.removeEventListener('load', () => setContentLoaded(true));
     };
-  }, [pathname, searchParams, contentLoaded]);
+  }, [pathname, contentLoaded]);
 
   return (
     <>
