@@ -1,45 +1,102 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&display=swap');
+
+/* Sora Font Family */
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/Fonts/Sora/Sora-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/Fonts/Sora/Sora-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/Fonts/Sora/Sora-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/Fonts/Sora/Sora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/Fonts/Sora/Sora-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/Fonts/Sora/Sora-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/Fonts/Sora/Sora-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
+  /* HelveticaNeue Family */
+  @font-face {
+    font-family: "Helvetica Neue", sans-serif;
+    src: url("/assets/Fonts/HelveticaNeue/HelveticaNeueBold.otf") format("opentype");
+    font-weight: 700;
+    font-display: swap;
+  }
+
+
+
+
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
-html, * , body {
+
+html, *, body {
   scroll-behavior: smooth !important;
 }
-
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Lexend Peta", sans-serif;
-  font-optical-sizing: auto;
-  letter-spacing: 1px;
-  font-size: 0.9rem;
+  font-family: "Sora", sans-serif;
 }
 
-/* Scroll bar */
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #161616; /* Color of the track */
+  background: #161616;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6b46c1; /* Purple color */
-  border-radius: 10px; /* Rounded corners */
-  border: 3px solid #161616; /* Padding around the thumb */
+  background: #6b46c1;
+  border-radius: 10px;
+  border: 3px solid #161616;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #966fff; /* Darker purple on hover */
+  background: #966fff;
 }
 
-/* Decrease Lines */
+/* Text truncation */
 .truncate-2-lines {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -48,15 +105,15 @@ body {
   text-overflow: ellipsis;
 }
 
-/* Image Colorless */
+/* Image styling */
 .SkillImg {
   height: 35%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
+  filter: grayscale(100%);
 }
 
-/* LOading Page */
-.mainLoadPage::after{
+/* Loading Page */
+.mainLoadPage::after {
   content: "";
   position: fixed;
   top: 0;
@@ -69,3 +126,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* Scrolling Style */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overscroll-behavior: none;
+}
+
+
+/* Helvetica Neue --- Font Family */
+.Helvetica{
+  font-family: "Helvetica Neue", sans-serif;
+}
+

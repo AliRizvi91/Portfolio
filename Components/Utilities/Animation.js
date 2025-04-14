@@ -2,7 +2,7 @@ export const bouncEffect = (YPosition) => {
   
     return {
       hidden: { 
-        y: -100,
+        y: -200,
       },
       show: { 
         y: YPosition,
@@ -16,4 +16,4 @@ export const bouncEffect = (YPosition) => {
     }
   }
 
-  
+

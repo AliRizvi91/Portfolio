@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -7,6 +8,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoBasketballOutline } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa6";
+
 
 function HeroSection() {
   const [showHero, setShowHero] = useState(false);
@@ -44,9 +46,9 @@ function HeroSection() {
       </div>
 
       {/* ------------ Hero Start ------------ */}
-      <div className=" container bg-transparent top-[-3rem] relative overflow-hidden h-full">
+      <div className=" lg:container w-full xl:mx-20 mx-9 bg-transparent relative overflow-hidden h-full">
 
-        
+
         {/* --------------- Animated Background Image ---------------
         --------------------------------------------------------------- */}
         <motion.div
@@ -67,21 +69,24 @@ function HeroSection() {
             pointerEvents: 'none' // Prevents interaction
           }}
         >
-          <img
+          <Image
             src="/assets/Images/HeroBG.png"
             alt="Background"
-            className="w-[17rem] md:w-[28rem] sm:w-[23rem] h-auto opacity-50"
+            width={438} 
+            height={474} 
+            className="w-[17rem] md:w-[28rem] sm:w-[23rem] h-auto opacity-50 object-cover"
+            quality={100} // optional for better quality
           />
         </motion.div>
 
-        <div className="relative z-10 h-full grid md:grid-cols-2 grid-cols-1 items-center">
+        <div className="relative mx-5 my-10 z-10 w-full h-full grid md:grid-cols-2 grid-cols-1 md:gap-10 justify-items-center items-center">
           {/* Text Content */}
-          <div className="mx-auto max-w-2xl px-6 pt-12 lg:px-8 py-16 md:pt-27 pb-0 md:pb-0 lg:py-37">
-            <h1 className="text-3xl font-extrabold">I am Gerold</h1>
+          <div className="relative justify-start px-2 pt-12 lg:px-5 py-16 md:pt-18 pb-0 md:pb-0 lg:py-23">
+            <h1 className="lg:text-[36px] text-[25px] font-extrabold">I am Gerold</h1>
             <div className="text-start">
               <div className="w-full max-w-4xl mx-auto pr-4">
-                <h1 className="text-5xl font-semibold tracking-tight xl:text-7xl lg:text-6xl md:text-5xl sm:text-5xl bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent leading-tight">
-                  Web Developer + UX Designer
+                <h1 className="lg:text-4xl text-[30px] font-bold tracking-tight xl:text-[65px] sm:text-5xl bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent leading-tight">
+                  Web Developer+ <br />UX Designer
                 </h1>
               </div>
 
@@ -90,7 +95,7 @@ function HeroSection() {
                 <div className="flex justify-center h-[25rem]">
                   <motion.div
                     className="mx-auto pt-8 flex justify-center items-start md:items-center relative"
-                    initial={{ rotate: 10 }}
+                    initial={{ rotate: 5 }}
                     whileHover={{
                       scale: 1.01,
                       transition: { duration: 0.5 },
@@ -103,7 +108,7 @@ function HeroSection() {
                     }}
                   >
                     <motion.div
-                      className="bg-[url(/assets/Images/HeroImage.jpg)] bg-contain bg-center w-[16rem] h-[19rem] rounded-[2.5rem] lg:w-[27rem] lg:h-[30rem] md:w-[25rem] md:h-[27rem] sm:w-[23rem] sm:h-[25rem]"
+                      className="bg-[url(/assets/Images/HeroImage.jpg)] bg-contain bg-center w-[19rem] h-[22rem] rounded-[2.5rem] sm:w-[27rem] sm:h-[30rem] "
                       whileHover={{
                         border: "3px solid rgba(135,80,245,1)",
                         transition: { duration: 0.3 }
@@ -113,15 +118,15 @@ function HeroSection() {
                 </div>
               )}
 
-              <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+              <p className="pt-[1rem] sm:pt-[8rem] text-lg lg:w-[550px] sm:w-[336px] w-full font-medium text-pretty text-gray-500 sm:text-xl/8">
                 I break down complex user experience problems to create integrity focussed solutions that connect billions of people
               </p>
             </div>
 
             {/* -------- Buttons Group -------- */}
-            <div className="flex md:flex-row flex-col items-center mt-10">
+            <div className="flex lg:flex-row md:flex-col sm:flex-row flex-col items-center sm:items-start mt-9">
               <motion.div
-                className="border md:w-[14rem] w-[12rem] flex justify-center border-[#8750f7] text-[#8750f7] cursor-pointer px-7 py-4 rounded-full font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="mb-2 border md:w-[14rem] w-[12rem] flex justify-center border-[#8750f7] text-[#8750f7] cursor-pointer px-7 py-4 rounded-full font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 whileHover={{
                   backgroundColor: "#8750f7",
                   color: '#ffffff',
@@ -148,7 +153,7 @@ function HeroSection() {
                 {socialMediaIcon.map((item, index) => (
                   <Link href="#" key={index}>
                     <motion.li
-                      className="mx-1 md:mx-2 w-8 h-8 rounded-full cursor-pointer flex justify-center items-center relative overflow-hidden"
+                      className="mx-2 md:mx-3 w-8 h-8 rounded-full cursor-pointer flex justify-center items-center relative overflow-hidden"
                       style={{ border: "1px solid rgba(135,80,245,1)" }}
                       whileHover="hover"
                       whileTap="click"
@@ -187,7 +192,7 @@ function HeroSection() {
             <div className="flex justify-center h-[35rem]">
               <motion.div
                 className="mx-auto top-0 flex justify-center items-start md:items-center relative h-full"
-                initial={{ rotate: 10 }}
+                initial={{ rotate: 5 }}
                 whileHover={{
                   scale: 1.01,
                   transition: { duration: 0.5 },
@@ -200,7 +205,7 @@ function HeroSection() {
                 }}
               >
                 <motion.div
-                  className="bg-[url(/assets/Images/HeroImage.jpg)] bg-contain bg-center w-[19rem] h-[22rem] rounded-[2.5rem] lg:w-[27rem] lg:h-[30rem]"
+                  className="bg-[url(/assets/Images/HeroImage.jpg)] bg-contain bg-center w-[350px] lg:w-[27rem] h-[22rem] rounded-[2.5rem]  lg:h-[30rem]"
                   whileHover={{
                     border: "3px solid rgba(135,80,245,1)",
                     transition: { duration: 0.3 }

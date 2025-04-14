@@ -1,16 +1,21 @@
-
+"use client"
+import Image from 'next/image';
 import Link from 'next/link';
+
 
 const Footer = () => {
     return (
-        <footer className="bg-[#2a1454]  shadow-sm">
+        <footer className="bg-[#2a1454] shadow-sm">
             <div className="w-full max-w-screen-xl flex flex-col justify-center items-center mx-auto p-4 md:py-8">
 
                 <Link href="#" className="flex items-center mb-3 sm:mb-8">
-                    <img
+                    <Image
                         src="/assets/Images/WhiteLogo.png"
                         alt="Logo"
-                        className="h-15"
+                        width={75}
+                        height={75}
+                        className="h-[75px] w-auto"
+                        priority // Preload important image
                     />
                 </Link>
                 <div className="sm:flex sm:items-center sm:justify-center">
@@ -47,7 +52,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                <hr className="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-4" />
+                <hr className="my-2 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-3" />
                 <span className="block text-sm text-[#823fff] sm:text-center">
                     {/* © {new Date().getFullYear()}{' '} */}
                     {/* <Link href="https://flowbite.com/" className="hover:underline">

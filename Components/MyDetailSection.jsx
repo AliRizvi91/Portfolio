@@ -6,9 +6,7 @@ import { PiGraduationCapDuotone } from "react-icons/pi";
 
 function MyDetailSection() {
   const rowVariants = {
-    initial: {
-      color: "inherit",
-    },
+    initial: false,
     hover: {
       color: "#ffffff",
       transition: {
@@ -66,6 +64,7 @@ function MyDetailSection() {
 
   const Card = ({ card }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [isClick, setIsClick] = useState(false);
 
     return (
       <motion.div
@@ -76,44 +75,45 @@ function MyDetailSection() {
         whileTap="hover"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
-        onFocus={() => setIsHovered(true)}
-        onBlur={() => setIsHovered(false)}
-        onTapStart={() => setIsHovered(true)}
-        onTapCancel={() => setIsHovered(false)}
-        className="block max-w-[33rem] p-6 sm:mx-5 mx-3 border border-gray-200 rounded-3xl mt-6 relative overflow-hidden focus:outline-none"
+        onFocus={() => setIsClick(true)}
+        onBlur={() => setIsClick(false)}
+        onTapStart={() => setIsClick(true)}
+        onTapCancel={() => setIsClick(false)}
+        className="block max-w-[33rem] p-6 sm:mx-5 mx-3 border border-none outline-none rounded-[20px] mt-6 relative overflow-hidden focus:outline-none"
         tabIndex={0}
       >
         <div
           className="absolute inset-0 z-0 transition-opacity duration-900 ease-in-out"
           style={{
             background: "linear-gradient(to right, #8750f7, #2a1454)",
-            opacity: isHovered ? 1 : 0,
+            opacity: isClick || isHovered  ? 1 : 0,
           }}
         />
         <div
           className="absolute inset-0 z-0 transition-opacity duration-900 ease-in-out"
           style={{
             background: "#ffffff",
-            opacity: isHovered ? 0 : 1,
+            opacity: isClick || isHovered ? 0 : 1,
           }}
         />
         <div className="relative z-10">
           <motion.h5
             variants={rowVariants}
-            className="mb-0 text-[1.2rem] font-semibold tracking-tight"
-            style={{ color: isHovered ? "#ffffff" : "#8750f7" }}
+            className="mb-0 lg:text-[1.2rem] text-[0.9rem] font-semibold tracking-tight"
+            // style={{ color: "#8750f7"}}
+            style={{ color: isClick || isHovered  ? "#ffffff" : "#8750f7" }}
           >
             {card.date}
           </motion.h5>
           <motion.h5
             variants={rowVariants}
-            style={{ color: isHovered ? "#ffffff" : "#000000" }}
-            className="mb-2 text-2xl uppercase font-bold tracking-tight"
+            style={{ color: isClick || isHovered  ? "#ffffff" : "#000000" }}
+            className="mb-2 lg:text-2xl text-[20px] uppercase font-bold tracking-tight"
           >
             {card.position}
           </motion.h5>
           <motion.p variants={rowVariants}
-            style={{ color: isHovered ? "#ffffff" : "#000000" }} className="font-normal">
+            style={{ color: isClick || isHovered  ? "#ffffff" : "#000000" }} className="font-normal lg:text-[1.3rem] text-[1rem]">
             {card.address}
           </motion.p>
         </div>
@@ -122,8 +122,8 @@ function MyDetailSection() {
   };
 
   return (
-    <div className="w-full py-16 px-4 flex flex-col items-center bg-[#F6F3FC]">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="w-full py-16 px-1 md:px-4 flex flex-col items-center bg-[#F6F3FC]">
+      <div className="xl:container w-full xl:px-28 grid grid-cols-1 md:grid-cols-2 gap-1 xl:gap-4">
         <div>
           <div className="flex items-center mb-8">
             <LiaAwardSolid className="w-12 h-12 text-[#8750f7] mr-4" />

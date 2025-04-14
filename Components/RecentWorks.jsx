@@ -66,9 +66,8 @@ function RecentWorks() {
             color: "#8750f7",
         },
         visible: {
-            rotate: -45,
+            rotate: 630,
             color: "#ffffff",
-            scale: 1.2,
         },
     };
 
@@ -141,7 +140,7 @@ function RecentWorks() {
             return (
                 <motion.div
                     key={index}
-                    className="sm:w-[35rem] sm:h-[35rem] w-[30rem] h-[30rem] rounded-2xl relative m-2 sm:m-7 focus:outline-none"
+                    className="xl:w-[573px] xl:h-[465px] lg:w-[471px] lg:h-[377px] w-[352px] h-[300px] rounded-[10px] relative m-2 focus:outline-none"
                     style={{
                         backgroundImage: `url(${data.Image})`,
                         backgroundSize: "cover",
@@ -207,7 +206,7 @@ function RecentWorks() {
 
     return (
         <div
-            className="w-full py-16 px-4 flex flex-col items-center bg-[#ffffff]"
+            className="w-full py-16 px-1 lg:px-4 flex flex-col items-center bg-[#ffffff]"
             style={{ height: isTabEmpty ? "80rem" : "auto" }}
         >
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent mb-8">
@@ -247,7 +246,7 @@ function RecentWorks() {
                 </ul>
             </div>
 
-            <div className="container sm:p-4 p-0">
+            <div className="xl:container w-full sm:p-4 p-0">
                 <div
                     className="absolute right-[50rem] top-[130rem] z-0 transform-gpu overflow-hidden blur-2xl"
                     aria-hidden="true"
@@ -257,7 +256,7 @@ function RecentWorks() {
                         style={{ transform: "translate(50%, -50%)" }}
                     />
                 </div>
-                <div className="flex flex-wrap justify-center items-center">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-2 md:gap-4 justify-items-center items-center">
                     {activeTab === "All" && <WorkCard Data={ALL} />}
                     {activeTab === "App" && <WorkCard Data={APP} />}
                     {activeTab === "Branding" && <WorkCard Data={BRANDING} />}

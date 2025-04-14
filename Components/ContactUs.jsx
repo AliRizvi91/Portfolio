@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from 'react';
-import MainBTN from './MainBTN';
+import {useState } from 'react';
+import dynamic from 'next/dynamic';
+// Components
+;
+const MainBTN = dynamic(()=> import('./MainBTN'))
 
 // icons
 import { FaPhoneVolume } from "react-icons/fa6";
 import { LuMessageCircleMore } from "react-icons/lu";
 import { IoLocationOutline } from "react-icons/io5";
+
 
 function ContactUs() {
     const [formData, setFormData] = useState({
@@ -38,8 +42,9 @@ function ContactUs() {
     };
 
     return (
-        <div className="w-full sm:py-30 pb-5 px-4 grid md:grid-cols-2 grid-cols-1 items-center bg-[#F6F3FC]">
-            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-10 bg-white rounded-2xl ">
+        <div className="w-full sm:py-30 pb-5 px-4  bg-[#F6F3FC] flex justify-center items-center">
+            <div className="xl:container w-full xl:px-30 xl:mx-auto grid md:grid-cols-2 grid-cols-1 gap-3 md:gap-7 xl:gap-30 items-center">
+            <form onSubmit={handleSubmit} className="md:order-1 order-2 max-w-full mx-auto p-10 bg-white rounded-2xl ">
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
                     Let’s work together!
                 </h1>
@@ -120,10 +125,10 @@ function ContactUs() {
                         placeholder="Messages..."
                     ></textarea>
                 </div>
-                <MainBTN text={'Send Message'}/>
+                <MainBTN text={'Send Message'} className={`px-7 py-4`} />
             </form>
 
-            <div className="flex flex-col justify-start md:ml-25 md:mt-0 mt-10 items-start">
+            <div className="md:order-2 md:mb-0 pb-15 order-1 flex flex-col justify-start xl:ml-25 ml-7 md:mt-0 mt-10 items-start">
                 <div className="flex items-center my-5">
                     <div className="w-13 h-13 flex items-center justify-center rounded-full text-white bg-gradient-to-r from-[#8750f7] to-[#2a1454]">
                         <FaPhoneVolume className='text-[1.4rem]' />
@@ -154,6 +159,7 @@ function ContactUs() {
                         </p>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 function Skills() {
     const cardVariants = {
@@ -57,25 +58,29 @@ function Skills() {
                 </p>
                 <div className="container flex flex-wrap mt-10 justify-center items-center">
                     {SkillBatches.map((Batch, index) => (
-                        <motion.div 
-                            key={index} 
+                        <motion.div
+                            key={index}
                             className="flex mx-2 my-2 flex-col justify-center items-center"
                             initial="initial"
                             whileHover="hover"
                             whileTap="tap"
                             tabIndex={0} // Make it focusable
                         >
-                            <motion.div 
-                                className="flex flex-col justify-center items-center w-[12rem] h-[12rem] rounded-4xl mb-2" 
+                            <motion.div
+                                className="flex flex-col justify-center items-center w-[165px] h-[168px] xl:w-[180px] xl:h-[183px] rounded-[25px] mb-2"
                                 variants={cardVariants}
                             >
-                                <motion.img 
-                                    src={Batch.image} 
-                                    className="h-[33%] SkillImg my-4" 
-                                    alt="LOGO" 
-                                    variants={imageVariants}
-                                />
-                                <h6 className="text-[22px] font-extrabold">{Batch.percentage}</h6>
+                                <motion.div variants={imageVariants} className="h-[33%] SkillImg my-4">
+                                    <Image
+                                        src={Batch.image}
+                                        alt="LOGO"
+                                        className="w-full h-full object-contain" // Adjust as needed
+                                        width={100} // Set appropriate width
+                                        height={100} // Set appropriate height
+                                    // You might need other Next.js Image props depending on your needs
+                                    />
+                                </motion.div>
+                                <h6 className="text-[20px] font-extrabold">{Batch.percentage}</h6>
                             </motion.div>
                             <h6 className="text-[16px] text-[#8750f7]">{Batch.name}</h6>
                         </motion.div>
