@@ -49,8 +49,8 @@ function Skills() {
 
     return (
         <>
-            <div className="w-full py-16 px-4 flex flex-col items-center">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
+            <div className="w-full py-[2.5rem] md:py-[7rem] px-4 flex flex-col items-center">
+                <h1 className="text-4xl sm:text-5xl lg:text-[45px] font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
                     My Skills
                 </h1>
                 <p className="text-center text-[15px] sm:text-[16px] leading-6 max-w-3xl">

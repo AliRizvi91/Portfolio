@@ -75,7 +75,7 @@ function Navbar() {
     ];
 
     const NavLink = ({ href, children }) => (
-        <Link href={href} className={`block ${isNavbarOpen || isFixedNavbarOpen ? "text-[22px] pt-5 text-white" : "text-[#160436]"} font-medium py-2 px-4 rounded-sm lg:p-0 relative group`}>
+        <Link href={href} className={`block gap-5 ${isNavbarOpen || isFixedNavbarOpen ? "text-[22px] pt-5 text-white" : "text-[#160436]"} font-[500] py-2 px-4 rounded-sm lg:p-0 relative group`}>
             {children}
             <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-l from-[rgb(49,9,128)] to-[#915ff5] rounded-full transform scale-x-0 origin-right transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left"></span>
         </Link>
@@ -85,8 +85,8 @@ function Navbar() {
         <ul className={`${mobile ? 'fixed top-24 left-0 right-0 w-full flex flex-col z-50 shadow-lg' : 'flex flex-col lg:flex-row 2xl:space-x-7 lg:space-x-5 lg:mt-0'} 
         ${isNavbarOpen || isFixedNavbarOpen ? "fixed top-[7.9rem] bg-[#2a1454] text-[15px] h-full" : "bg-transparent text-[15px]"}`}>
             {navLinks.map((link) => (
-                <li key={link.name}>
-                    <NavLink href={link.href}>{link.name}</NavLink>
+                <li key={link.name} >
+                    <NavLink href={link.href} >{link.name}</NavLink>
                 </li>
             ))}
         </ul>

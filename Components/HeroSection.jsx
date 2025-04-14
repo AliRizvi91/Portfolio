@@ -118,13 +118,13 @@ function HeroSection() {
                 </div>
               )}
 
-              <p className="pt-[1rem] sm:pt-[8rem] text-lg lg:w-[550px] sm:w-[336px] w-full font-medium text-pretty text-gray-500 sm:text-xl/8">
+              <p className="pt-[1rem] sm:pt-[3rem] text-lg lg:w-[550px] sm:w-[336px] w-full font-medium text-pretty text-gray-500 sm:text-xl/8">
                 I break down complex user experience problems to create integrity focussed solutions that connect billions of people
               </p>
             </div>
 
             {/* -------- Buttons Group -------- */}
-            <div className="flex lg:flex-row md:flex-col sm:flex-row flex-col items-center sm:items-start mt-9">
+            <div className="flex lg:flex-row md:flex-col sm:flex-row flex-col items-start sm:items-center mt-9">
               <motion.div
                 className="mb-2 border md:w-[14rem] w-[12rem] flex justify-center border-[#8750f7] text-[#8750f7] cursor-pointer px-7 py-4 rounded-full font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 whileHover={{

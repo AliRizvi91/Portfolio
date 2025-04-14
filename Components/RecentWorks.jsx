@@ -206,10 +206,10 @@ function RecentWorks() {
 
     return (
         <div
-            className="w-full py-16 px-1 lg:px-4 flex flex-col items-center bg-[#ffffff]"
+            className="w-full px-1 lg:px-4 flex flex-col items-center bg-[#ffffff] py-[2.5rem] md:py-[7rem]"
             style={{ height: isTabEmpty ? "80rem" : "auto" }}
         >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent mb-8">
+            <h1 className="text-3xl sm:text-[45px] lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent mb-8">
                 My Recent Works
             </h1>
 

@@ -42,10 +42,10 @@ function ContactUs() {
     };
 
     return (
-        <div className="w-full sm:py-30 pb-5 px-4  bg-[#F6F3FC] flex justify-center items-center">
+        <div className="w-full py-[2.5rem] md:py-[7rem] pb-5 px-4  bg-[#F6F3FC] flex justify-center items-center">
             <div className="xl:container w-full xl:px-30 xl:mx-auto grid md:grid-cols-2 grid-cols-1 gap-3 md:gap-7 xl:gap-30 items-center">
             <form onSubmit={handleSubmit} className="md:order-1 order-2 max-w-full mx-auto p-10 bg-white rounded-2xl ">
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
+                <h1 className="text-3xl sm:text-5xl lg:text-[45px] font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
                     Let’s work together!
                 </h1>
                 <p className="text-start mb-7 text-[15px] sm:text-[16px] leading-6 max-w-3xl">

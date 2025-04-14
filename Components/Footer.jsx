@@ -58,7 +58,7 @@ const Footer = () => {
                     {/* <Link href="https://flowbite.com/" className="hover:underline">
             Flowbite™
           </Link> */}
-                    © 2024 All Rights Reserved by ThemeJunction
+                    © 2024 All Rights Reserved by <span className='font-semibold -tracking-wide'>ThemeJunction</span>
                 </span>
             </div>
         </footer>

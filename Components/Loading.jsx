@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion";
 
-function Loading({ setIsLoading , Position }) {
+function Loading({Position }) {
   
 
   
@@ -32,14 +32,13 @@ function Loading({ setIsLoading , Position }) {
                 delay: 3
               } 
             }}
-            onAnimationComplete={() => setIsLoading(false)}
           >
-            <h1 className='uppercase text-center sm:font-normal font-bold sm:text-2xl text-[1rem] sm:tracking-[1.1em] tracking-[0.8em] mb-4'>Loading</h1>
+            <h1 className='uppercase text-center font-light sm:text-2xl text-[0.9rem] sm:tracking-[1.4em] tracking-[0.8em] mb-4'>Loading</h1>
           </motion.div>
 
           {/* Shimmer bar */}
           <motion.div
-            className="h-[6rem] w-[11rem] rounded-full relative top-[-6rem] bg-gradient-to-r from-white/40 via-white to-white/40"
+            className="h-[8rem] w-[22rem] rounded-full relative top-[-6rem] bg-gradient-to-r from-white/40 via-white to-white/40"
             initial={{ x: "-100%" }}
             animate={{ x: "100%" }}
             transition={{

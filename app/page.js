@@ -1,8 +1,7 @@
 "use client"
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-
 
 // Dynamically imported components
 const CountData = dynamic(() => import("@/Components/CountData"), { ssr: false });
@@ -18,24 +17,24 @@ const Loading = dynamic(() => import("@/Components/Loading"), { ssr: false });
 
 export default function Home() {
 
-  
-
   return (
     <>
-      {/* <Loading setIsLoading={setIsLoading} Position={isLoading ? "sticky" : "absolute"} /> */}
-      <motion.main 
-        className="relative flex flex-col w-full bg-transparent justify-center items-center"
-      >
-        <HeroSection />
-        <CountData />
-        <ServicesSection />
-        <RecentWorks />
-        <MyDetailSection />
-        <Skills />
-        <Stories />
-        <Blogs />
-        <ContactUs />
-      </motion.main>
+        <motion.main 
+          className="relative flex flex-col w-full bg-transparent justify-center items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <HeroSection />
+          <CountData />
+          <ServicesSection />
+          <RecentWorks />
+          <MyDetailSection />
+          <Skills />
+          <Stories />
+          <Blogs />
+          <ContactUs />
+        </motion.main>
     </>
   );
 }
