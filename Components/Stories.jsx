@@ -177,12 +177,12 @@ function Stories() {
         <div className="w-full flex items-center justify-center  py-[2.5rem] md:py-[7rem] px-4 bg-[#F6F3FC]">
             <div className="container grid xl:grid-cols-2 grid-cols-1 lg:items-start lg:justify-items-start items-center justify-items-center">
                 <motion.div
-                    className="flex flex-col items-center justify-center lg:items-start lg:justify-start mb-15"
+                    className="flex flex-col lg:items-start lg:justify-start mb-15"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h1 className="text-4xl sm:text-5xl lg:text-[45px] font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
+                    <h1 className="text-4xl text-start sm:text-5xl lg:text-[45px] font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
                         My Client's Stories
                     </h1>
                     <p className="text-start text-[15px] sm:text-[16px] leading-6 max-w-3xl">
