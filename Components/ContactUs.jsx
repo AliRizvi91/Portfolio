@@ -173,7 +173,7 @@ function ContactUs() {
                                         onChange={handleChange}
                                         size={4}
                                     >
-                                        <option value="" className="p-3 bg-transparent hover:bg-gray-100 focus:font-semibold">
+                                        <option value="" className="p-3 bg-transparent hover:bg-gray-100 font-bold">
                                             --Please choose an option--
                                         </option>
                                         <option value="branding" className="p-3 bg-transparent hover:bg-gray-100 focus:font-semibold">
