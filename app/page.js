@@ -15,6 +15,7 @@ const Stories = dynamic(() => import("@/Components/Stories"), { ssr: false });
 const RecentWorks = dynamic(() => import("@/Components/RecentWorks"), { ssr: false });
 const Loading = dynamic(() => import("@/Components/Loading"), { ssr: false });
 
+
 export default function Home() {
 
   return (

@@ -19,7 +19,7 @@ function Loading({Position }) {
       }}
     >
       <div className="w-full relative top-10 h-full flex flex-col justify-center items-center">
-        <div className="overflow-hidden relative top-0  h-full flex justify-center items-center flex-col">
+        <div className="overflow-hidden relative top-0 pt-20  h-full flex justify-center items-center flex-col">
           {/* "Loading" text */}
           <motion.div
             initial={{ y: 0, opacity: 1 }}
@@ -33,7 +33,7 @@ function Loading({Position }) {
               } 
             }}
           >
-            <h1 className='uppercase text-center font-light sm:text-2xl text-[0.9rem] sm:tracking-[1.4em] tracking-[0.8em] mb-4'>Loading</h1>
+            <h1 className='uppercase text-center font-light sm:text-[20px] text-[0.9rem] sm:tracking-[1.3em] tracking-[0.8em] ms-3'>Loading</h1>
           </motion.div>
 
           {/* Shimmer bar */}

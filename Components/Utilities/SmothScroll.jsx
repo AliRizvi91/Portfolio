@@ -12,8 +12,8 @@ export default function SmoothScroll({ children }) {
       const lenis = new Lenis({
         // Softer scrolling parameters
         delay:1.3,
-        duration: 1.2, // Increased duration for slower, smoother scrolling
-        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), // Smoother easing function
+        duration: 1.4, // Increased duration for slower, smoother scrolling
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(3, -10 * t)), // Smoother easing function
         smoothWheel: true,
         wheelMultiplier: 1.3, // Reduced wheel sensitivity
         touchMultiplier: 1, // Slightly increased touch sensitivity
