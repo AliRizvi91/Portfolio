@@ -159,27 +159,37 @@ function ContactUs() {
                             <AnimatePresence>
                                 {isSelectOpen && (
                                     <motion.div
-                                        initial="closed"
-                                        animate="open"
-                                        exit="closed"
-                                        variants={selectVariants}
-                                        className="absolute z-10 bg-[#f6f3fc] border border-gray-900 rounded-lg shadow-lg overflow-hidden"
+                                    initial="closed"
+                                    animate="open"
+                                    exit="closed"
+                                    variants={selectVariants}
+                                    className="absolute z-10 bg-white border border-gray-100 rounded-b-md overflow-hidden"
+                                >
+                                    <select 
+                                        id="countries" 
+                                        name="service"
+                                        className="select bg-transparent w-[276px] text-base text-gray-900 block px-3.5 py-4 focus:bg-transparent focus:outline-none appearance-none overflow-hidden cursor-pointer"
+                                        value={formData.service}
+                                        onChange={handleChange}
+                                        size={4}
                                     >
-                                        <select 
-                                            id="countries" 
-                                            name="service"
-                                            className="bg-transparent w-[276px] text-[16px] text-gray-900 block px-3.5 py-4 focus:outline-none appearance-none overflow-hidden"
-                                            value={formData.service}
-                                            onChange={handleChange}
-                                            size={4}
-                                        >
-                                            <option value="">--Please choose an option--</option>
-                                            <option value="branding" className='sm:text-[16px] p-3 hover:bg-[#e9e0fa]'>Branding Design</option>
-                                            <option value="web" className='sm:text-[16px] p-3 hover:bg-[#e9e0fa]'>Web Design</option>
-                                            <option value="uiux" className='sm:text-[16px] p-3 hover:bg-[#e9e0fa]'>UI/UX Design</option>
-                                            <option value="app" className='sm:text-[16px] p-3 hover:bg-[#e9e0fa]'>App Design</option>
-                                        </select>
-                                    </motion.div>
+                                        <option value="" className="p-3 bg-transparent hover:bg-gray-100 focus:font-semibold">
+                                            --Please choose an option--
+                                        </option>
+                                        <option value="branding" className="p-3 bg-transparent hover:bg-gray-100 focus:font-semibold">
+                                            Branding Design
+                                        </option>
+                                        <option value="web" className="p-3 bg-transparent hover:bg-gray-100 focus:font-semibold">
+                                            Web Design
+                                        </option>
+                                        <option value="uiux" className="p-3 bg-transparent hover:bg-gray-100 focus:font-semibold">
+                                            UI/UX Design
+                                        </option>
+                                        <option value="app" className="p-3 bg-transparent hover:bg-gray-100 focus:font-semibold">
+                                            App Design
+                                        </option>
+                                    </select>
+                                </motion.div>
                                 )}
                             </AnimatePresence>
                         </div>

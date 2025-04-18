@@ -149,3 +149,7 @@ body {
     height: 304px;
   }
 }
+
+.select option:hover{
+  background-color: transparent !important;
+}
