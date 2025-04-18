@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { LiaAwardSolid } from "react-icons/lia";
-import { PiGraduationCapDuotone } from "react-icons/pi";
+import { BiMedal } from "react-icons/bi";
+import { FaGraduationCap } from "react-icons/fa6";
 
 function MyDetailSection() {
   const rowVariants = {
@@ -108,12 +108,12 @@ function MyDetailSection() {
           <motion.h5
             variants={rowVariants}
             style={{ color: isClick || isHovered  ? "#ffffff" : "#000000" }}
-            className="mb-2 lg:text-2xl text-[20px] uppercase font-bold tracking-tight"
+            className="sm:mb-2 mb-0 lg:text-2xl text-[20px] uppercase font-bold tracking-tight"
           >
             {card.position}
           </motion.h5>
           <motion.p variants={rowVariants}
-            style={{ color: isClick || isHovered  ? "#ffffff" : "#000000" }} className="font-normal lg:text-[1.3rem] text-[1rem]">
+            style={{ color: isClick || isHovered  ? "#ffffff" : "#000000" }} className="font-normal text-[16px]">
             {card.address}
           </motion.p>
         </div>
@@ -126,7 +126,7 @@ function MyDetailSection() {
       <div className="xl:container w-full xl:px-28 grid grid-cols-1 md:grid-cols-2 gap-1 xl:gap-4">
         <div>
           <div className="flex items-center mb-8">
-            <LiaAwardSolid className="w-12 h-12 text-[#8750f7] mr-4" />
+            <BiMedal className="w-12 h-12 text-[#8750f7] mr-4" />
             <h1 className="text-3xl sm:text-[45px] lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent">
               My Experience
             </h1>
@@ -138,7 +138,7 @@ function MyDetailSection() {
 
         <div className="md:mt-0 mt-20">
           <div className="flex items-center mb-8">
-            <PiGraduationCapDuotone className="w-12 h-12 text-[#8750f7] mr-4" />
+            <FaGraduationCap className="w-12 h-12 text-[#8750f7] mr-4" />
             <h1 className="text-3xl sm:text-[45px]  lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent">
               My Education
             </h1>

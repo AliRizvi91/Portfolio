@@ -46,7 +46,7 @@ function HeroSection() {
       </div>
 
       {/* ------------ Hero Start ------------ */}
-      <div className=" lg:container w-full xl:mx-20 mx-9 bg-transparent relative overflow-hidden h-full">
+      <div className=" lg:container w-full xl:mx-20 sm:mx-9 mx-1 bg-transparent relative overflow-hidden h-full">
 
 
         {/* --------------- Animated Background Image ---------------
@@ -79,7 +79,7 @@ function HeroSection() {
           />
         </motion.div>
 
-        <div className="relative mx-5 my-10 z-10 w-full h-full grid md:grid-cols-2 grid-cols-1 md:gap-10 justify-items-center items-center">
+        <div className="relative mx-2 sm:mx-5 my-5 sm:my-10 z-10 w-full h-full grid md:grid-cols-2 grid-cols-1 md:gap-10 justify-items-center items-center">
           {/* Text Content */}
           <div className="relative justify-start px-2 pt-12 lg:px-5 py-16 md:pt-18 pb-0 md:pb-0 lg:py-23">
             <h1 className="lg:text-[36px] text-[25px] font-extrabold">I am Gerold</h1>
@@ -92,7 +92,7 @@ function HeroSection() {
 
               {/* ------ HeroImage For Responsive ------ */}
               {showHero === false && (
-                <div className="flex justify-center h-[25rem]">
+                <div className="flex justify-center h-[23.5rem] mx-auto">
                   <motion.div
                     className="mx-auto pt-8 flex justify-center items-start md:items-center relative"
                     initial={{ rotate: 5 }}
@@ -108,7 +108,7 @@ function HeroSection() {
                     }}
                   >
                     <motion.div
-                      className="bg-[url(/assets/Images/HeroImage.jpg)] bg-contain bg-center w-[19rem] h-[22rem] rounded-[2.5rem] sm:w-[27rem] sm:h-[30rem] "
+                      className="bg-[url(/assets/Images/HeroImage.jpg)] ResponsiveImage bg-contain bg-center rounded-[2.5rem] w-[19rem] h-[22rem]  sm:w-[27rem] sm:h-[30rem] "
                       whileHover={{
                         border: "3px solid rgba(135,80,245,1)",
                         transition: { duration: 0.3 }
@@ -205,7 +205,7 @@ function HeroSection() {
                 }}
               >
                 <motion.div
-                  className="bg-[url(/assets/Images/HeroImage.jpg)] bg-contain bg-center w-[350px] lg:w-[27rem] h-[22rem] rounded-[2.5rem]  lg:h-[30rem]"
+                  className="bg-[url(/assets/Images/HeroImage.jpg)] bg-contain bg-center rounded-[2.5rem] w-[350px] h-[22rem] lg:w-[27rem] lg:h-[30rem]"
                   whileHover={{
                     border: "3px solid rgba(135,80,245,1)",
                     transition: { duration: 0.3 }

@@ -81,49 +81,49 @@ function RecentWorks() {
     const ALL = [
         {
             Image: "/assets/Images/portfolio-1.jpg",
-            Title: "E-commerce Platform",
+            Title: "Online Store",
             Description: "A modern online shopping solution with secure payment integration and responsive design.",
         },
         {
             Image: "/assets/Images/portfolio-2.jpg",
-            Title: "Mobile Banking App",
+            Title: "Banking App",
             Description: "Financial management application with biometric authentication and budget tracking features.",
         },
         {
             Image: "/assets/Images/portfolio-3.jpg",
-            Title: "Dellotie Design System",
+            Title: "Design System",
             Description: "Comprehensive UI kit and design framework for enterprise applications.",
         },
         {
             Image: "/assets/Images/portfolio-4.jpg",
-            Title: "Health Tracker",
+            Title: "Fitness Tracker",
             Description: "Wearable integration app that monitors fitness metrics and sleep patterns.",
         },
     ];
-
+    
     const APP = [
         {
             Image: "/assets/Images/portfolio-1.jpg",
-            Title: "E-commerce Platform",
+            Title: "Online Store",
             Description: "A modern online shopping solution with secure payment integration and responsive design.",
         },
     ];
-
+    
     const BRANDING = [
         {
             Image: "/assets/Images/portfolio-1.jpg",
-            Title: "E-commerce Platform",
+            Title: "Online Store",
             Description: "A modern online shopping solution with secure payment integration and responsive design.",
         },
         {
             Image: "/assets/Images/portfolio-4.jpg",
-            Title: "Health Tracker",
+            Title: "Fitness Tracker",
             Description: "Wearable integration app that monitors fitness metrics and sleep patterns.",
         },
     ];
-
+    
     const CONTENT = [];
-
+    
     const DESIGN = [
         {
             Image: "/assets/Images/portfolio-1.jpg",
@@ -168,7 +168,9 @@ function RecentWorks() {
                     >
                         <div>
                             <h1 className="text-2xl font-bold text-white">{data.Title}</h1>
-                            <p className="text-white">{data.Description}</p>
+                            <p className="text-white line-clamp-2 leading-snug overflow-hidden text-ellipsis">
+    {data.Description}
+</p>
                         </div>
                         <motion.div
                             initial="hidden"
@@ -223,9 +225,8 @@ function RecentWorks() {
                                     e.preventDefault();
                                     setActiveTab(tab);
                                 }}
-                                className={`inline-block sm:px-6 px-2 py-3 rounded-full relative z-10 ${
-                                    activeTab === tab && "text-white"
-                                }`}
+                                className={`inline-block sm:px-6 px-2 py-3 rounded-full relative z-10 ${activeTab === tab && "text-white"
+                                    }`}
                             >
                                 {tab}
                             </Link>

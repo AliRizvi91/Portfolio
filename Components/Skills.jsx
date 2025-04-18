@@ -80,7 +80,7 @@ function Skills() {
                                     // You might need other Next.js Image props depending on your needs
                                     />
                                 </motion.div>
-                                <h6 className="text-[20px] font-extrabold">{Batch.percentage}</h6>
+                                <h6 className="text-[20px] font-bold">{Batch.percentage}</h6>
                             </motion.div>
                             <h6 className="text-[16px] text-[#8750f7]">{Batch.name}</h6>
                         </motion.div>

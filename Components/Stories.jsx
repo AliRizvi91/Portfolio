@@ -144,7 +144,7 @@ function Stories() {
                     return nextIndex;
                 });
             }
-        }, 4000);
+        }, 3000);
 
         return () => clearInterval(interval);
     }, [isDragging, StoriesData.length]);
@@ -180,7 +180,7 @@ function Stories() {
                     className="flex flex-col lg:items-start lg:justify-start mb-15"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 1.8 }}
                 >
                     <h1 className="text-4xl text-start sm:text-5xl lg:text-[45px] font-bold tracking-tight bg-gradient-to-r from-[#8750f7] to-[#2a1454] bg-clip-text text-transparent pb-5">
                         My Client's Stories
